@@ -166,7 +166,8 @@ public:
 
 #define MSG_GOSSIP_TEXT_BUFF_MENU "[Меню бафов] ->"
 #define MSG_GOSSIP_TEXT_BUFF_MENUvip1 "[Premium buff] ->"
-#define MSG_GOSSIP_TEXT_BUFF_MENUvip2 "[Archiv] ->"
+#define MSG_GOSSIP_TEXT_BUFF_MENUvip2 "[Title] ->"
+#define MSG_GOSSIP_TEXT_BUFF_MENUvip3 "[test] ->"
 #define MSG_GOSSIP_TEXT_MAIN_MENU "<- [Вернутся в Главное меню]"
 #define MSG_GOSSIP_TEXT_PROFFESION_MENU "[Меню Профессий] ->"
 #define MSG_GOSSIP_TEXT_PROFFESION_SECON_MENU "[Меню Второстепенных профессий] ->"
@@ -349,6 +350,7 @@ public:
 		AddGossipItemFor(player, GOSSIP_ICON_TALK, MSG_GOSSIP_TEXT_BUFF_MENU, GOSSIP_SENDER_MAIN, 2);
         AddGossipItemFor(player, GOSSIP_ICON_TALK, MSG_GOSSIP_TEXT_BUFF_MENUvip1, GOSSIP_SENDER_MAIN, 13);
         AddGossipItemFor(player, GOSSIP_ICON_TALK, MSG_GOSSIP_TEXT_BUFF_MENUvip2, GOSSIP_SENDER_MAIN, 22);
+		AddGossipItemFor(player, GOSSIP_ICON_TALK, MSG_GOSSIP_TEXT_BUFF_MENUvip3, GOSSIP_SENDER_MAIN, 2233);
 		AddGossipItemFor(player, GOSSIP_ICON_TALK, MSG_GOSSIP_TEXT_PROFFESION_MENU, GOSSIP_SENDER_MAIN, 36);
 		SendGossipMenuFor(player, DEFAULT_GOSSIP_MESSAGE, _creature->GetGUID());
 		return true;
@@ -537,7 +539,32 @@ public:
 			AddGossipItemFor(player, GOSSIP_ICON_TALK, MSG_GOSSIP_TEXT_BUFF_MENU, GOSSIP_SENDER_MAIN, 2);
             AddGossipItemFor(player, GOSSIP_ICON_TALK, MSG_GOSSIP_TEXT_BUFF_MENUvip1, GOSSIP_SENDER_MAIN, 13);
             AddGossipItemFor(player, GOSSIP_ICON_TALK, MSG_GOSSIP_TEXT_BUFF_MENUvip2, GOSSIP_SENDER_MAIN, 22);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, MSG_GOSSIP_TEXT_BUFF_MENUvip3, GOSSIP_SENDER_MAIN, 2233);
 			AddGossipItemFor(player, GOSSIP_ICON_TALK, MSG_GOSSIP_TEXT_PROFFESION_MENU, GOSSIP_SENDER_MAIN, 36);
+			SendGossipMenuFor(player, DEFAULT_GOSSIP_MESSAGE, _creature->GetGUID());
+			break;
+		case 2233:
+			player->PlayerTalkClass->ClearMenus();
+			//AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, MSG_GOSSIP_TEXT_TITLES_JENKINS, GOSSIP_SENDER_MAIN, 23);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Algalon", GOSSIP_SENDER_MAIN, 711);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Doomwalker", GOSSIP_SENDER_MAIN, 712);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Doomlord kazzak", GOSSIP_SENDER_MAIN, 713);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Onyxia", GOSSIP_SENDER_MAIN, 714);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Thaddius", GOSSIP_SENDER_MAIN, 715);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Gluth", GOSSIP_SENDER_MAIN, 716);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Maexxna", GOSSIP_SENDER_MAIN, 717);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Sapphiron", GOSSIP_SENDER_MAIN, 718);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Noth The Plaguebringer", GOSSIP_SENDER_MAIN, 719);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Kel'Thuzad", GOSSIP_SENDER_MAIN, 720);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Kael'thas Sunstrider", GOSSIP_SENDER_MAIN, 721);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "C'thun", GOSSIP_SENDER_MAIN, 722);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Thrall", GOSSIP_SENDER_MAIN, 723);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Sylvanas Windrunner", GOSSIP_SENDER_MAIN, 724);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Alexstrasza (Blutelf)", GOSSIP_SENDER_MAIN, 725);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Varian Wrynn", GOSSIP_SENDER_MAIN, 726);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Varimathras", GOSSIP_SENDER_MAIN, 727);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Alexstrasza (Drache)", GOSSIP_SENDER_MAIN, 728);
+			AddGossipItemFor(player, GOSSIP_ICON_TALK, "Mal'ganis", GOSSIP_SENDER_MAIN, 729);
 			SendGossipMenuFor(player, DEFAULT_GOSSIP_MESSAGE, _creature->GetGUID());
 			break;
 		case 22:
@@ -551,6 +578,101 @@ public:
 			AddGossipItemFor(player, GOSSIP_ICON_TALK, MSG_GOSSIP_TEXT_MAIN_MENU, GOSSIP_SENDER_MAIN, 21);
 			SendGossipMenuFor(player, DEFAULT_GOSSIP_MESSAGE, _creature->GetGUID());
 			break;
+       case 711: // Algalon
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(28641);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.2f);
+            break;
+       case 712: // Doomwalker
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(16630);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.1f);
+            break;
+       case 713: // Doomlord kazzak
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(17887);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.10f);
+            break;
+       case 714: // Onyxia
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(8570);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.1f);
+            break;
+       case 715: // Thaddius
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(16137);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.2f);
+            break;
+       case 716: // Gluth
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(16064);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.2f);
+            break;
+       case 717: // Maexxna
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(15928);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.15f);
+            break;
+       case 718: // Sapphiron
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(16033);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.1f);
+            break;
+       case 719: // Noth The Plaguebringer
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(16590);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.7f);
+            break;
+       case 720: // Kel'Thuzad
+			CloseGossipMenuFor(player);
+            player->SetDisplayId(15945);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.2f);
+            break;
+       case 721: // Kael'thas Sunstrider
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(20023);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.5f);
+            break;
+	   case 722: // C'thun
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(15786);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.1f);
+            break;
+       case 723: // Thrall
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(4527);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 1.0f);
+            break;
+       case 724: // Sylvanas Windrunner
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(28213);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 1.0f);
+            break;
+		case 725: // Alexstrasza, BElf
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(28227);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.8f);
+            break;
+       case 726: // Varian Wrynn
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(28127);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 1.0f);
+            break;
+       case 727: // Varimathras
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(28220);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.7f);
+            break;
+       case 728: // Alexstrasza, dragon
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(27569);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.1f);
+            break;
+       case 729: // Mal'ganis
+            CloseGossipMenuFor(player);
+            player->SetDisplayId(26582);
+            player->SetFloatValue(OBJECT_FIELD_SCALE_X, 0.5f);
+            break;
 		case 23:
 		{CharTitlesEntry const* titleInfo = sCharTitlesStore.LookupEntry(143);
 		if (player->HasTitle(titleInfo))

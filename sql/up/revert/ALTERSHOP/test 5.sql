@@ -1,4 +1,4 @@
-SET @buy := 1;
+SET @buy := 200;
 SET @stack := 2000;
 
 UPDATE `item_template` SET `BuyCount` = @buy, `stackable` = @stack WHERE `entry` = 21215;
